@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131225083027) do
+ActiveRecord::Schema.define(:version => 20131225110319) do
 
   create_table "reactions", :force => true do |t|
     t.string   "title"
     t.string   "image_url"
     t.string   "author"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "notes_count"
   end
 
 end

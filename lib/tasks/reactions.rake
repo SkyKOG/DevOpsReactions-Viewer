@@ -4,7 +4,9 @@ namespace :web do
     require 'nokogiri'
     require 'open-uri'
 
-    (1..10).each do |i|
+    puts ">> Started Operation"
+
+    (1..42).each do |i|
       PAGE_URL = "http://devopsreactions.tumblr.com/page/#{i}"
       page = Nokogiri::HTML(open(PAGE_URL))
 
@@ -12,9 +14,13 @@ namespace :web do
         title = item.css(".post_title a").text
         image_url = item.css("p img")[0][:src]
         author = item.css("p:nth-child(3)").text
+        notes_count = item.css(".num_notes").text[/[0-9\.]+/].to_i
 
-        reaction = Reaction.new(title: title, image_url: image_url, author: author)
+        puts ">> Fetched Data"
+        reaction = Reaction.new(title: title, image_url: image_url, author: author, notes_count: notes_count)
         reaction.save
+
+        puts ">> Added Reaction : #{title}"
         # puts item.css(".post_date").text
         # puts item.css(".num_notes").text[/[0-9\.]+/]
       end
