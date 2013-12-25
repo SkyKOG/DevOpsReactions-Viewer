@@ -2,7 +2,7 @@ class ReactionsController < ApplicationController
   # GET /reactions
   # GET /reactions.json
   def index
-    @reactions = Reaction.all
+    @reactions = Reaction.find(:all, :order=>('notes_count desc'), :limit => 10)
 
     respond_to do |format|
       format.html # index.html.erb

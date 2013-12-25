@@ -22,8 +22,6 @@ namespace :web do
         reaction.save
 
         puts ">> Added Reaction : #{title}"
-        # puts item.css(".post_date").text
-        # puts item.css(".num_notes").text[/[0-9\.]+/]
       end
     end
 

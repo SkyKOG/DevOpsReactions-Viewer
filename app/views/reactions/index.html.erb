@@ -13,7 +13,7 @@
 <% @reactions.each do |reaction| %>
   <tr>
     <td><%= reaction.title %></td>
-    <td><%= reaction.image_url %></td>
+    <td><img src="<%=reaction.image_url-%>" alt=""></td>
     <td><%= reaction.author %></td>
     <td><%= link_to 'Show', reaction %></td>
     <td><%= link_to 'Edit', edit_reaction_path(reaction) %></td>
