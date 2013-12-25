@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @reaction.title %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @reaction.image_url %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @reaction.author %>
+</p>
+
+
+<%= link_to 'Edit', edit_reaction_path(@reaction) %> |
+<%= link_to 'Back', reactions_path %>
